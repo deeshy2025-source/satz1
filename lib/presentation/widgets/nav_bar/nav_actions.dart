@@ -31,8 +31,8 @@ class NavActions extends StatelessWidget {
           _NavLink('HomePage', onTap: onHome ?? () {}),
           _NavLink('Our Expertise', onTap: onExpertise ?? () {}),
           _NavLink('Services & Products', onTap: onServices ?? () {}),
-          _NavButton('About Us', onTap: onAbout ?? () {}),
-          _NavButton('Contact Us', onTap: onContact ?? () {}),
+          _NavButton('About Us', onTap: onAbout ?? () {},buttonColor:ConstColors.mid ,),
+          _NavButton('Contact Us', onTap: onContact ?? () {},buttonColor: ConstColors.primary),
         ],
       );
     }
@@ -40,7 +40,7 @@ class NavActions extends StatelessWidget {
     // شاشة صغيرة → زرار Menu يفتح endDrawer
     return Builder(
       builder: (ctx) => IconButton(
-        icon: const Icon(Icons.menu, color: Colors.black87),
+        icon: const Icon(Icons.menu, color: ConstColors.primary),
         tooltip: 'Menu',
         onPressed: () => Scaffold.of(ctx).openEndDrawer(),
       ),
@@ -76,7 +76,8 @@ class _NavLink extends StatelessWidget {
 class _NavButton extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
-  const _NavButton(this.title, {required this.onTap});
+  final Color buttonColor;
+  const _NavButton(this.title, {required this.onTap,required this.buttonColor});
 
   @override
   Widget build(BuildContext context) {
@@ -84,9 +85,9 @@ class _NavButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: ConstSize.navItemGapSm),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: ConstColors.primary,
-          foregroundColor: Colors.white,
-          padding: EdgeInsets.symmetric(
+          backgroundColor: buttonColor,
+          foregroundColor: ConstColors.colorWhite,
+          padding: const EdgeInsets.symmetric(
             horizontal: ConstSize.buttonHPadding,
             vertical: ConstSize.buttonVPadding,
           ),

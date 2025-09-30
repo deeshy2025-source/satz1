@@ -23,7 +23,7 @@ class TextSide extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           decoration: BoxDecoration(
-            color: ConstColors.accent.withValues(alpha: 0.65),
+            color: ConstColors.mid,
             borderRadius: BorderRadius.circular(14),
           ),
           child: Text(ConstStrings.heroHighText,

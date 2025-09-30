@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:satz1/core/constants/const_colors.dart';
 import 'firebase_options.dart';
 import 'presentation/pages/home_page.dart';
 import 'package:flutter/gestures.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
       scrollBehavior: MyScrollBehavior(),
       title: 'SATZ Tech',
       theme: ThemeData(
+        drawerTheme: const DrawerThemeData(backgroundColor: ConstColors.lightColor),
         primarySwatch: Colors.deepPurple,
       ),
       home: const HomePage(),

@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 
 class ConstColors {
 
-  static const Color primary = Color(0xFF1F1746);
-  static const Color secondary = Color(0xFF0E0929);
-  static const Color accent = Color(0xFF3E2E8C);
+  static const Color primary = Color(0xFF211146);
+  static const Color secondary = Color(0xFF1D0D3D);
+  static const Color accent = Color(0xFF4C258D);
+  static const Color mid = Color(0xFF3F006C);
+  static const Color colorWhite = Colors.white;
+  static const Color testBasicColor = Colors.white;
+  static const Color lightColor = Color(0xFFE4D5FF);
+
 
   static const Color scaffoldBg = Color(0xFFF8F9FB);
   static const Color sectionBg1 = Color(0xFFFFECB3);

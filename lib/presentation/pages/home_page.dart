@@ -26,8 +26,8 @@ class HomePage extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: const [
             DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
-              child: Text('Menu', style: TextStyle(color: Colors.white, fontSize: 24)),
+              decoration: BoxDecoration(color: ConstColors.primary),
+              child: Text('Menu', style: TextStyle(color: ConstColors.testBasicColor, fontSize: 24)),
             ),
             ListTile(title: Text('HomePage')),
             ListTile(title: Text('Our Expertise')),
