@@ -48,7 +48,7 @@ class ConstText {
   );
 
   static TextStyle sectionTitle(BuildContext context) => TextStyle(
-    fontSize: _scaleForWidth(context, min: 22, max: 36),
+    fontSize: _scaleForWidth(context, min: 22, max: 40),
     fontWeight: FontWeight.w700,
     color: Colors.black87,
   );
@@ -66,6 +66,11 @@ class ConstText {
     height: 1.3,
   );
 
+  static TextStyle TextMid(BuildContext context) => TextStyle(
+    color: Colors.black,
+    fontSize: _scaleForWidth(context, min: 14, max: 24),
+    height: 1.3,
+  );
   static TextStyle heroHighlight(BuildContext context) => TextStyle(
     color: Colors.white,
     fontSize: _scaleForWidth(context, min: 14, max: 17),
