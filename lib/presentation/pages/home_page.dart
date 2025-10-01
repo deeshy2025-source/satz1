@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:satz1/presentation/widgets/satz_projects_section/satz_project_section.dart';
+
+import 'package:satz1/presentation/widgets/ourexpertize/expertise_widget.dart';
+
 
 // ثوابت
 import '../../core/constants/const_colors.dart';
@@ -50,7 +54,11 @@ class HomePage extends StatelessWidget {
 
               UnderHero(),
 
+
               SatzProjects(),
+
+             ExpertiseBand(),
+
 
               SectionThree(),
 
