@@ -12,6 +12,7 @@ class TextSide extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const SizedBox(height: 8),
          Text(ConstStrings.appName, style: ConstText.headline(context)),

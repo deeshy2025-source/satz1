@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:satz1/presentation/widgets/satz_projects_section/satz_project_section.dart';
 
 // ثوابت
 import '../../core/constants/const_colors.dart';
@@ -10,6 +11,7 @@ import '../../core/constants/const_text.dart';
 // Widgets
 import '../widgets/hero_section/hero_section.dart';
 import '../widgets/nav_bar/NavBar.dart';
+import '../widgets/under_hero_section/under_hero_section.dart';
 // ✅ مهم: خلي مسار الـ NavBar lowercase
 
 
@@ -46,9 +48,9 @@ class HomePage extends StatelessWidget {
 
               HeroSection(),
 
-              SectionOne(),
+              UnderHero(),
 
-              SectionTwo(),
+              SatzProjects(),
 
               SectionThree(),
 
