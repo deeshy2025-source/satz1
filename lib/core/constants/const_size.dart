@@ -31,11 +31,15 @@ class ConstSize {
   static const double underHeroPaddingH = 24;
   static const double underHeroPaddingV = 16;
   static const double underHeroMaxWidth = 1400;
+  static const double underHeroMinHeight = 120;
 
   static const double projectsPadding = 24;
   static const double projectsGap = 32;
 
-  static const double projectsImageWidth = 520;
+  static const double projectsImageMaxW = 520;
+  static const double projectsImageFracW = 0.38;
   static const double projectsImageRadius = 16;
   static const double projectsButtonRadius = 12;
+  static const double projectsImageWidth = 520;
+
 }
