@@ -10,8 +10,12 @@ class ConstColors {
   static const Color testBasicColor = Colors.white;
   static const Color lightColor = Color(0xFFE4D5FF);
 
+
+  static const Color underHeroBg = Color(0xFF151128);
+
   static const Color lightMidColor =  Color(0xFFE6D5FF);
   static const Color veryLightColor =  Color(0xFFDAD0FF);
+
 
   static const Color scaffoldBg = Color(0xFFF8F9FB);
   static const Color sectionBg1 = Color(0xFFFFECB3);
