@@ -42,4 +42,15 @@ class ConstSize {
   static const double projectsButtonRadius = 12;
   static const double projectsImageWidth = 520;
 
+  static const double footerMaxWidth      = 1400;
+  static const double footerPaddingH      = 24;
+  static const double footerPaddingV      = 24;
+  static const double footerGutter        = 32;
+  static const double footerLogoHeight    = 80;
+  static const double footerIconSize      = 22;
+  static const double footerSectionGap    = 12;
+  static const double footerItemSpacing   = 8;
+  static const double footerBreakpoint    = 900;
+  static const double footerBottomPadding = 16;
+
 }

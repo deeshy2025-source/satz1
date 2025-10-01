@@ -38,4 +38,9 @@ class ConstColors {
   ],
   );
 
+  static const Color footerBg       = Colors.white;
+  static const Color footerText     = Colors.black87;
+  static const Color footerTitle    = Colors.black87;
+  static const Color footerDivider  = Color(0x11000000);
+
 }
