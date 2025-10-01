@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:satz1/presentation/widgets/satz_footer/satz_footer_section.dart';
 
 import 'package:satz1/presentation/widgets/satz_projects_section/satz_project_section.dart';
 
@@ -61,6 +62,8 @@ class HomePage extends StatelessWidget {
 
 
               SectionThree(),
+
+              SatzFooter()
 
             ],
           ),
