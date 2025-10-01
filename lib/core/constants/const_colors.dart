@@ -10,6 +10,8 @@ class ConstColors {
   static const Color testBasicColor = Colors.white;
   static const Color lightColor = Color(0xFFE4D5FF);
 
+  static const Color lightMidColor =  Color(0xFFE6D5FF);
+  static const Color veryLightColor =  Color(0xFFDAD0FF);
 
   static const Color scaffoldBg = Color(0xFFF8F9FB);
   static const Color sectionBg1 = Color(0xFFFFECB3);
@@ -22,6 +24,14 @@ class ConstColors {
     colors: [accent,primary, secondary],
     stops: [0.0,0.3,1.0],
   );
-
+  static const LinearGradient expertiseGradient =LinearGradient(
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+  colors: [
+  Color(0xFFF2E9FF),
+  Color(0xFFE6D5FF),
+  Color(0xFFDAD0FF),
+  ],
+  );
 
 }
