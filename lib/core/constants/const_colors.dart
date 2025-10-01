@@ -22,6 +22,7 @@ class ConstColors {
   static const Color sectionBg2 = Color(0xFFC8E6C9);
   static const Color sectionBg3 = Color(0xFFBBDEFB);
 
+
   static const LinearGradient heroGradient = LinearGradient(
     begin: Alignment.bottomLeft,
     end: Alignment.topRight,
