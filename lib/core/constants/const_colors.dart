@@ -17,7 +17,7 @@ class ConstColors {
   static const Color veryLightColor =  Color(0xFFDAD0FF);
 
 
-  static const Color scaffoldBg = Color(0xFFF8F9FB);
+  static const Color scaffoldBg = Colors.white;
   static const Color sectionBg1 = Color(0xFFFFECB3);
   static const Color sectionBg2 = Color(0xFFC8E6C9);
   static const Color sectionBg3 = Color(0xFFBBDEFB);

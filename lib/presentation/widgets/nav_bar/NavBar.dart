@@ -4,7 +4,20 @@ import 'nav_logo.dart';
 import 'nav_actions.dart';
 
 class NavBar extends StatelessWidget implements PreferredSizeWidget {
-  const NavBar({super.key});
+  final VoidCallback? onHome;
+  final VoidCallback? onExpertise;
+  final VoidCallback? onServices;
+  final VoidCallback? onAbout;
+  final VoidCallback? onContact;
+
+  const NavBar({
+    super.key,
+    this.onHome,
+    this.onExpertise,
+    this.onServices,
+    this.onAbout,
+    this.onContact,
+  });
 
   @override
   Size get preferredSize => const Size.fromHeight(ConstSize.navbarHeight);
@@ -25,9 +38,17 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
               padding: const EdgeInsets.symmetric(horizontal: ConstSize.padding_24),
               child: Row(
                 children: [
-                  const NavLogo(),               // اللوجو (ساحب الحجم من ConstSize)
+                  const NavLogo(),
                   const Spacer(),
-                  NavActions(compact: compact),  // روابط/أزرار أو Menu حسب العرض
+                  NavActions(
+                    compact: compact,
+                    // ✅ مرّر الكولباكس للروابط/الأزرار
+                    onHome: onHome,
+                    onExpertise: onExpertise,
+                    onServices: onServices,
+                    onAbout: onAbout,
+                    onContact: onContact,
+                  ),
                 ],
               ),
             );

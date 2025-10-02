@@ -1,126 +1,131 @@
 import 'package:flutter/material.dart';
-import 'package:satz1/presentation/widgets/precision_section/precesion_section.dart';
-import 'package:satz1/presentation/widgets/satz_footer/satz_footer_section.dart';
-
-import 'package:satz1/presentation/widgets/satz_projects_section/satz_project_section.dart';
-
-import 'package:satz1/presentation/widgets/ourexpertize/expertise_widget.dart';
-
-
-// ثوابت
 import '../../core/constants/const_colors.dart';
 import '../../core/constants/const_size.dart';
-import '../../core/constants/const_strings.dart';
-import '../../core/constants/const_text.dart';
 
-
-// Widgets
 import '../widgets/hero_section/hero_section.dart';
 import '../widgets/nav_bar/NavBar.dart';
+import '../widgets/ourexpertize/expertise_widget.dart';
+import '../widgets/precision_section/precesion_section.dart';
+import '../widgets/satz_footer/satz_footer_section.dart';
+import '../widgets/satz_projects_section/satz_project_section.dart';
 import '../widgets/under_hero_section/under_hero_section.dart';
-// ✅ مهم: خلي مسار الـ NavBar lowercase
 
-
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final GlobalKey _topKey = GlobalKey();
+  final GlobalKey _expertiseKey = GlobalKey();
+  final GlobalKey _projectsKey = GlobalKey();
+  final GlobalKey _footerKey = GlobalKey();
+
+  void _scrollTo(GlobalKey key) {
+    final ctx = key.currentContext;
+    if (ctx == null) return;
+    Scrollable.ensureVisible(ctx,
+        duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final args = ModalRoute.of(context)?.settings.arguments;
+    if (args is String) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        switch (args) {
+          case 'expertise':
+            _scrollTo(_expertiseKey);
+            break;
+          case 'projects':
+            _scrollTo(_projectsKey);
+            break;
+          case 'contact':
+            _scrollTo(_footerKey);
+            break;
+          case 'home':
+            _scrollTo(_topKey);
+            break;
+        }
+      });
+    }
+  }
+
+  ListTile _drawerItem(String title, VoidCallback onTap) {
+    return ListTile(title: Text(title), onTap: onTap);
+  }
+
+  void _navigateAfterDrawer(String route, {Object? arguments}) {
+    Navigator.pop(context);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      Navigator.pushNamed(context, route, arguments: arguments);
+    });
+  }
+
+  void _drawerScroll(GlobalKey key) {
+    Navigator.pop(context);
+    Future.microtask(() => _scrollTo(key));
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ConstColors.scaffoldBg,
-      appBar: const NavBar(),
-      endDrawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: const [
-            DrawerHeader(
-              decoration: BoxDecoration(color: ConstColors.primary),
-              child: Text('Menu', style: TextStyle(color: ConstColors.testBasicColor, fontSize: 24)),
-            ),
-            ListTile(title: Text('HomePage')),
-            ListTile(title: Text('Our Expertise')),
-            ListTile(title: Text('Services & Products')),
-            ListTile(title: Text('About Us')),
-            ListTile(title: Text('Contact Us')),
-          ],
-        ),
+      appBar: NavBar(
+        onHome: () => _scrollTo(_topKey),
+        onExpertise: () => _scrollTo(_expertiseKey),
+        onServices: () => Navigator.pushNamed(context, '/products'),
+        onAbout: () => Navigator.pushNamed(context, '/about'),
+        onContact: () => Navigator.pushNamed(context, '/contact'),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: ConstSize.padding_16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: const [
-
-              HeroSection(),
-
-              UnderHero(),
-
-
-              SatzProjects(),
-
-             ExpertiseBand(),
-
-
-              PrecisionSection(),
-
-              SatzFooter()
-
+      endDrawer: Drawer(
+        child: SafeArea(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: ConstColors.primary),
+                child: Text('Menu',
+                    style: TextStyle(
+                        color: ConstColors.testBasicColor, fontSize: 24)),
+              ),
+              _drawerItem('HomePage', () => _drawerScroll(_topKey)),
+              _drawerItem('Our Expertise', () => _drawerScroll(_expertiseKey)),
+              _drawerItem('Services & Products',
+                      () => _navigateAfterDrawer('/products')),
+              _drawerItem('About Us', () => _navigateAfterDrawer('/about')),
+              _drawerItem('Contact Us', () => _navigateAfterDrawer('/contact')),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class SectionOne extends StatelessWidget {
-  const SectionOne({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: ConstSize.sectionHeight,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: ConstColors.sectionBg1,
-        borderRadius: BorderRadius.circular(16),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            KeyedSubtree(key: _topKey, child: const SizedBox.shrink()),
+            const HeroSection(),
+            const UnderHero(),
+            Padding(
+              padding:
+              const EdgeInsets.symmetric(horizontal: ConstSize.padding_16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SatzProjects(key: _projectsKey),
+                  ExpertiseBand(key: _expertiseKey),
+                  const PrecisionSection(),
+                ],
+              ),
+            ),
+            SatzFooter(key: _footerKey),
+          ],
+        ),
       ),
-      child:  Text(ConstStrings.sectionOneTitle, style: ConstText.sectionTitle(context)),
-    );
-  }
-}
-
-class SectionTwo extends StatelessWidget {
-  const SectionTwo({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: ConstSize.sectionHeight,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: ConstColors.sectionBg2,
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Text(ConstStrings.sectionTwoTitle, style: ConstText.sectionTitle(context)),
-    );
-  }
-}
-
-class SectionThree extends StatelessWidget {
-  const SectionThree({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: ConstSize.sectionHeight,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: ConstColors.sectionBg3,
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child:  Text(ConstStrings.sectionThreeTitle, style: ConstText.sectionTitle(context)),
     );
   }
 }

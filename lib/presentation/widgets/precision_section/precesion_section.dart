@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:satz1/core/constants/const_colors.dart';
+import '../../../core/constants/const_strings.dart';
 import '../../../core/constants/const_text.dart';
+import '../custom_button.dart';
 import 'feature_tile.dart';
 
 class PrecisionSection extends StatelessWidget {
@@ -76,16 +78,12 @@ class PrecisionSection extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 28),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: ConstColors.accent,
-                  foregroundColor: ConstColors.colorWhite,
-                  padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-                  elevation: 0,
-                ),
-                child: const Text('Request a Quote'),
+              CustomButton(
+                title: ConstStrings.requestAQuote,
+                onTap: () => Navigator.pushNamed(context, '/products'),
+                color: ConstColors.mid,   // لون مختلف
+                hPadding: 40,             // زرار أعرض
+                vPadding: 18,             // أطول شوية
               ),
             ],
           ),
