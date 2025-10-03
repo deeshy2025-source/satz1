@@ -12,7 +12,6 @@ class AboutCapsuleImage extends StatelessWidget {
     final double imgH =
     isWide ? ConstSize.aboutImageHWide : ConstSize.aboutImageHNarrow;
 
-    // نستخدم Transform عشان نعمل overlap بسيط للصورة على الكارد اليسار (زي التصميم)
     return Transform.translate(
       offset: Offset(isWide ? ConstSize.aboutImageOverlapX : 0, 0),
       child: ClipRRect(
@@ -22,7 +21,7 @@ class AboutCapsuleImage extends StatelessWidget {
           child: Image.asset(
             ConstStrings.aboutUsImage,
             fit: BoxFit.cover,
-            height: imgH, // بيساعد الـ layout في حساب الارتفاع
+            height: imgH,
           ),
         ),
       ),

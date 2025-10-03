@@ -46,10 +46,10 @@ class SatzProjects extends StatelessWidget {
                 isWide ? CrossAxisAlignment.start : CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(ConstStrings.satzProjectsTitle,
+                  SelectableText(ConstStrings.satzProjectsTitle,
                       style: ConstText.sectionTitle(context)),
                   const SizedBox(height: 12),
-                  Text(
+                  SelectableText(
                     ConstStrings.satzProjectsBody,
                     style: ConstText.body(context),
                     textAlign: TextAlign.justify,

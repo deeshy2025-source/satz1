@@ -16,7 +16,7 @@ class QuickBadge extends StatelessWidget {
         gradient: ConstColors.heroGradient,
       ),
       alignment: Alignment.center,
-      child: Text(
+      child: SelectableText(
         ConstStrings.quickContactTitle,
         textAlign: TextAlign.center,
         style: ConstText.sectionTitle(context)

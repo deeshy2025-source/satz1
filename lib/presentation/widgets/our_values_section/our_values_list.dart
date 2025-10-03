@@ -13,13 +13,13 @@ class ValuesList extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // العنوان بولد
-          Text(
+          SelectableText(
             title,
             style: ConstText.sectionTitle(context).copyWith(fontSize: 22),
           ),
           const SizedBox(height: 8),
           // الوصف
-          Text(
+          SelectableText(
             body,
             style: ConstText.body(context),
             textAlign: TextAlign.justify,

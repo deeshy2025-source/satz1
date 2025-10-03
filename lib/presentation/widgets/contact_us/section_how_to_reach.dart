@@ -53,7 +53,7 @@ class SectionHowToReach extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 24,),
+              const SizedBox(height: 24,),
               Wrap(
                 spacing: 32, runSpacing: 16, alignment: WrapAlignment.spaceBetween,
                 children: [

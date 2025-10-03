@@ -38,12 +38,12 @@ class ProductsHeroSection extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    SelectableText(
                       ConstStrings.productsHeroTitle,
                       style: ConstText.sectionTitle(context).copyWith(color: Colors.white),
                     ),
                     const SizedBox(height: 12),
-                    Text(
+                    SelectableText(
                       ConstStrings.productsHeroBody,
                       style: ConstText.body(context).copyWith(color: Colors.white70),
                       textAlign: TextAlign.justify,

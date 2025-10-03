@@ -43,11 +43,11 @@ class FeatureTile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title,
+                SelectableText(title,
                     style: ConstText.TextMid(context)
                         .copyWith(color: ConstColors.testBasicColor, fontWeight: FontWeight.w700)),
                 const SizedBox(height: 6),
-                Text(text,
+                SelectableText(text,
                     style:   ConstText.body(context)
                     .copyWith(color: ConstColors.testBasicColor)),
               ],

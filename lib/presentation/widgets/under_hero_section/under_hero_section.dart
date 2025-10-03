@@ -38,7 +38,7 @@ class UnderHero extends StatelessWidget {
               );
 
               // ✅ النص
-              final text = Text(
+              final text = SelectableText(
                 ConstStrings.heroHighlight,
                 style: ConstText.body(context).copyWith(color: Colors.white),
                 textAlign: TextAlign.justify,

@@ -30,13 +30,13 @@ class EdgeBulletsColumn extends StatelessWidget {
       crossAxisAlignment:
       alignStart ? CrossAxisAlignment.start : CrossAxisAlignment.start,
       children: [
-        Text(title, style: titleStyle),
+        SelectableText(title, style: titleStyle),
         const SizedBox(height: ConstSize.edgeSectionSpacing),
 
         if (intro.isNotEmpty)
           Padding(
             padding: const EdgeInsets.only(bottom: ConstSize.edgeSectionSpacing),
-            child: Text(intro,
+            child: SelectableText(intro,
                 style: ConstText.body(context).copyWith(color: Colors.white, fontWeight: FontWeight.w700)),
           ),
 
@@ -47,7 +47,7 @@ class EdgeBulletsColumn extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("•  ", style: TextStyle(color: Colors.white)),
+                const SelectableText("•  ", style: TextStyle(color: Colors.white)),
                 Expanded(
                   child: RichText(
                     text: TextSpan(
@@ -74,8 +74,8 @@ class EdgeBulletsColumn extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("•  ", style: TextStyle(color: Colors.white)),
-                Expanded(child: Text(t, style: bodyStyle)),
+                const SelectableText("•  ", style: TextStyle(color: Colors.white)),
+                Expanded(child:SelectableText(t, style: bodyStyle)),
               ],
             ),
           ),

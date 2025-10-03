@@ -38,7 +38,7 @@ class ExpertiseContent extends StatelessWidget {
       builder: (context, c) {
         final isNarrow = c.maxWidth < 900;
 
-        final cards = const [
+        const cards = [
           ExpertiseCard(
             title: "Electrical Engineering for Satellite Communication",
             points: [
