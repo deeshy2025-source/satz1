@@ -3,6 +3,7 @@ import '../../../core/constants/const_colors.dart';
 import '../../../core/constants/const_size.dart';
 import '../../../core/constants/const_text.dart';
 import '../../../core/constants/const_strings.dart';
+import '../custom_button.dart';
 
 class SatzProjects extends StatelessWidget {
   const SatzProjects({super.key});
@@ -19,7 +20,6 @@ class SatzProjects extends StatelessWidget {
             builder: (context, c) {
               final isWide = c.maxWidth >= 900;
 
-              // 🖼️ عرض الصورة بشكل مرن على الشاشات الواسعة (نسبة + حد أقصى)
               final double imgW = isWide
                   ? (c.maxWidth * ConstSize.projectsImageFracW)
                   .clamp(0, ConstSize.projectsImageMaxW)
@@ -55,25 +55,12 @@ class SatzProjects extends StatelessWidget {
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 20),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: ConstColors.primary,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                          ConstSize.projectsButtonRadius,
-                        ),
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 28,
-                        vertical: 14,
-                      ),
-                      elevation: 0,
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      ConstStrings.satzProjectsButton,
-                      style: ConstText.navButtonText(context),
-                    ),
+                  CustomButton(
+                    title: ConstStrings.satzProjectsButton,
+                    onTap: () => Navigator.pushNamed(context, '/products'),
+                    color: ConstColors.mid,   // لون مختلف
+                    hPadding: 40,             // زرار أعرض
+                    vPadding: 18,             // أطول شوية
                   ),
                 ],
               );

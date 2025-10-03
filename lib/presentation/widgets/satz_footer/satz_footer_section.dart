@@ -77,19 +77,22 @@ class SatzFooter extends StatelessWidget {
                   else
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        FooterLogoSocial(),
-                        SizedBox(height: ConstSize.footerGutter),
+                      children: [
+                        const FooterLogoSocial(),
+                        const SizedBox(height: ConstSize.footerGutter),
+
                         FooterLinksColumn(
                           title: ConstStrings.footerQuickLinksTitle,
                           items: ConstStrings.footerQuickLinks,
                         ),
-                        SizedBox(height: ConstSize.footerGutter),
+                        const SizedBox(height: ConstSize.footerGutter),
+
                         FooterLinksColumn(
                           title: ConstStrings.footerContactTitle,
                           items: ConstStrings.footerContact,
                         ),
-                        SizedBox(height: ConstSize.footerGutter),
+                        const SizedBox(height: ConstSize.footerGutter),
+
                         FooterLinksColumn(
                           title: ConstStrings.footerLegalTitle,
                           items: ConstStrings.footerLegal,

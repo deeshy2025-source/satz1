@@ -6,7 +6,6 @@ import '../../../core/constants/const_colors.dart';
 class NavActions extends StatelessWidget {
   final bool compact;
 
-  // (اختياري) لو حابة توصّلي الروابط لـ scroll callbacks:
   final VoidCallback? onHome;
   final VoidCallback? onExpertise;
   final VoidCallback? onServices;
@@ -30,14 +29,14 @@ class NavActions extends StatelessWidget {
         children: [
           _NavLink('HomePage', onTap: onHome ?? () {}),
           _NavLink('Our Expertise', onTap: onExpertise ?? () {}),
-          _NavLink('Services & Products', onTap: onServices ?? () {}),
-          _NavButton('About Us', onTap: onAbout ?? () {},buttonColor:ConstColors.mid ,),
-          _NavButton('Contact Us', onTap: onContact ?? () {},buttonColor: ConstColors.primary),
+          _NavLink('Services & Products', onTap: onServices ?? () =>Navigator.pushNamed(context, '/products')),
+          _NavButton('About Us', onTap: onAbout ?? () {}, buttonColor: ConstColors.mid),
+          _NavButton('Contact Us', onTap: onContact ?? () {}, buttonColor: ConstColors.primary),
         ],
       );
     }
 
-    // شاشة صغيرة → زرار Menu يفتح endDrawer
+    // شاشة صغيرة → زر Menu يفتح endDrawer
     return Builder(
       builder: (ctx) => IconButton(
         icon: const Icon(Icons.menu, color: ConstColors.primary),
@@ -60,7 +59,7 @@ class _NavLink extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(8),
-        hoverColor: Colors.black.withValues(alpha: 0.04),
+        hoverColor: Colors.black.withValues(alpha:0.04),
         child: MouseRegion(
           cursor: SystemMouseCursors.click,
           child: Padding(
@@ -77,7 +76,7 @@ class _NavButton extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
   final Color buttonColor;
-  const _NavButton(this.title, {required this.onTap,required this.buttonColor});
+  const _NavButton(this.title, {required this.onTap, required this.buttonColor});
 
   @override
   Widget build(BuildContext context) {
