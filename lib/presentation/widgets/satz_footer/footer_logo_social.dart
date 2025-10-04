@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../../core/constants/const_colors.dart';
 import '../../../core/constants/const_size.dart';
 import '../../../core/constants/const_strings.dart';
 
@@ -20,11 +21,14 @@ class FooterLogoSocial extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // اللوجو
-        Image.asset(
+        SvgPicture.asset(
           ConstStrings.logoLight,
           height: ConstSize.footerLogoHeight,
           fit: BoxFit.contain,
-          semanticLabel: 'SATZ Tech Logo',
+          colorFilter: const ColorFilter.mode(
+              ConstColors.primary,
+              BlendMode.srcIn
+          ),
         ),
 
         const SizedBox(height: 16),

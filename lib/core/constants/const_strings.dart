@@ -11,8 +11,8 @@ class ConstStrings {
   static const String heroHighlight =
       "Pioneering the design and implementation of cutting-edge, blending excellence.";
 
-  static const String logoLight='assets/images/logo1.png';
-  static const String logoDark='assets/images/logo2.png';
+  static const String logoLight='assets/images/newLogo1.svg';
+  static const String logoDark='assets/images/newLogo1.svg';
 
   // -------- Sections --------
   static const String sectionOneTitle   = 'Section One';
