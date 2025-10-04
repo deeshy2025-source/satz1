@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:satz1/core/constants/const_strings.dart';
 import '../../../core/constants/const_size.dart';
 
 class NavLogo extends StatelessWidget {
@@ -7,7 +8,7 @@ class NavLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      'assets/images/logoLight.png',
+      ConstStrings.logoLight,
       height: ConstSize.logoHeight,      // من const_size.dart
       fit: BoxFit.contain,
     );

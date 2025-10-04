@@ -31,7 +31,7 @@ class UnderHero extends StatelessWidget {
               final logo = Padding(
                 padding: const EdgeInsets.only(right: ConstSize.underHeroPaddingH),
                 child: Image.asset(
-                  'assets/images/LogoDark.png',
+                  ConstStrings.logoDark,
                   height: ConstSize.underHeroLogoH,
                   fit: BoxFit.contain,
                 ),

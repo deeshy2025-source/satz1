@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../core/constants/const_size.dart';
+import '../../../core/constants/const_strings.dart';
 
 class FooterLogoSocial extends StatelessWidget {
   const FooterLogoSocial({super.key});
@@ -20,7 +21,7 @@ class FooterLogoSocial extends StatelessWidget {
       children: [
         // اللوجو
         Image.asset(
-          'assets/images/logoLight.png',
+          ConstStrings.logoLight,
           height: ConstSize.footerLogoHeight,
           fit: BoxFit.contain,
           semanticLabel: 'SATZ Tech Logo',
