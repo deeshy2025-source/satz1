@@ -24,10 +24,9 @@ class SectionAboutUs extends StatelessWidget {
               final bool isWide = c.maxWidth >= ConstSize.aboutBreakpoint;
 
               if (isWide) {
-                // صف: نسب 5/12 للنص + 7/12 للصورة مع overlap خفيف
-                return Row(
+                return const Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
+                  children: [
                     Expanded(flex: ConstSize.aboutFlexText, child: AboutTextCard()),
                     SizedBox(width: ConstSize.aboutGutter),
                     Expanded(
@@ -38,7 +37,6 @@ class SectionAboutUs extends StatelessWidget {
                 );
               }
 
-              // شاشة ضيقة: عمودي (الصورة فوق ثم النص)
               return const Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [

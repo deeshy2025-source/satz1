@@ -15,11 +15,11 @@ class TextSide extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const SizedBox(height: 8),
-         Text(ConstStrings.appName, style: ConstText.headline(context)),
+         SelectableText(ConstStrings.appName, style: ConstText.headline(context)),
         const SizedBox(height: 16),
-        Text(ConstStrings.heroSub1, style: ConstText.subHeadline(context),textAlign: TextAlign.justify,),
+        SelectableText(ConstStrings.heroSub1, style: ConstText.subHeadline(context),textAlign: TextAlign.justify,),
         const SizedBox(height: 8),
-        Text(ConstStrings.heroSub2, style: ConstText.subHeadline(context)),
+        SelectableText(ConstStrings.heroSub2, style: ConstText.subHeadline(context)),
         const SizedBox(height: 20),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -27,7 +27,7 @@ class TextSide extends StatelessWidget {
             color: ConstColors.mid,
             borderRadius: BorderRadius.circular(14),
           ),
-          child: Text(ConstStrings.heroHighText,
+          child: SelectableText(ConstStrings.heroHighText,
               style: ConstText.highlight(context)),
         ),
       ],

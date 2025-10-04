@@ -12,7 +12,7 @@ class PrecisionSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final items = const [
+    const items = [
       FeatureTile(
         icon: Icons.satellite_alt_outlined,
         title: 'RF & Microwave Components',
@@ -47,12 +47,12 @@ class PrecisionSection extends StatelessWidget {
           constraints: const BoxConstraints(maxWidth: _maxContentWidth),
           child: Column(
             children: [
-              Text('Precision Engineering for Aerospace & Defense',
+              SelectableText('Precision Engineering for Aerospace & Defense',
                   style: ConstText.sectionTitle(context)
                       .copyWith(color: Colors.white, fontWeight: FontWeight.w700),
                   textAlign: TextAlign.center),
               const SizedBox(height: 8),
-              Text(
+              SelectableText(
                 'Providing end-to-end solutions in satellite systems, RF/microwave components, and advanced prototyping.',
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.white70),
                 textAlign: TextAlign.center,

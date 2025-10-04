@@ -29,7 +29,7 @@ class ExpertiseCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title,
+          SelectableText(title,
               style: ConstText.TextMid(context)),
           const SizedBox(height: 12),
           for (final p in points)
@@ -38,8 +38,8 @@ class ExpertiseCard extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text("• "),
-                  Expanded(child: Text(p,style: ConstText.body(context),)),
+                  const SelectableText("• "),
+                  Expanded(child: SelectableText(p,style: ConstText.body(context),)),
                 ],
               ),
             ),

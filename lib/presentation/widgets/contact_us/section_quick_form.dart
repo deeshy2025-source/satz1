@@ -17,9 +17,9 @@ class SectionQuickForm extends StatelessWidget {
       child: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 1200),
-          child: Row(
+          child: const Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               QuickBadge(),
               SizedBox(width: 24),
               Expanded(child: QuickFormCard()),

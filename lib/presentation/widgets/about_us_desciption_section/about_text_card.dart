@@ -20,39 +20,20 @@ class AboutTextCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // العنوان
-          Text(
+          SelectableText(
             ConstStrings.aboutUsTitle,
             style: ConstText.heroSub(context),
           ),
           const SizedBox(height: 12),
 
           // النص
-          Text(
+          SelectableText(
             ConstStrings.aboutUsBody,
             style: ConstText.subHeadline(context),
             textAlign: TextAlign.justify,
           ),
           const SizedBox(height: 16),
 
-          // زرار
-          // Center(
-          //   child: ElevatedButton(
-          //
-          //     onPressed: () {},
-          //     style: ElevatedButton.styleFrom(
-          //       backgroundColor: ConstColors.primary,
-          //       shape: RoundedRectangleBorder(
-          //         borderRadius: BorderRadius.circular(ConstSize.aboutButtonRadius),
-          //       ),
-          //       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-          //       elevation: 0,
-          //     ),
-          //     child: Text(
-          //       ConstStrings.contactUs,
-          //       style: ConstText.navButtonText(context),
-          //     ),
-          //   ),
-          // ),
           Center(
             child: CustomButton(
               title: ConstStrings.contactUs,

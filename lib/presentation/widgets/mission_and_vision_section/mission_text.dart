@@ -11,9 +11,9 @@ class MissionText extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(ConstStrings.missionTitle, style: ConstText.sectionTitle(context)),
+        SelectableText(ConstStrings.missionTitle, style: ConstText.sectionTitle(context)),
         const SizedBox(height: ConstSize.padding_16),
-        Text(
+        SelectableText(
           ConstStrings.missionBody,
           style: ConstText.body(context),
           textAlign: TextAlign.justify,

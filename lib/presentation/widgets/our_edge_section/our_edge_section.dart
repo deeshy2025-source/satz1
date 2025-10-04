@@ -101,13 +101,13 @@ class SectionOurEdge extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
+                  SelectableText(
                     ConstStrings.edgeBottomTitle,
                     style: ConstText.sectionTitle(context).copyWith(color: Colors.white),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: ConstSize.edgeSectionSpacing),
-                  Text(
+                  SelectableText(
                     ConstStrings.edgeBottomIntro,
                     style: ConstText.body(context).copyWith(color: Colors.white70),
                     textAlign: TextAlign.center,
@@ -119,7 +119,7 @@ class SectionOurEdge extends StatelessWidget {
                     spacing: 24,
                     runSpacing: 8,
                     children: ConstStrings.edgeBottomBullets
-                        .map((t) => Text("• $t",
+                        .map((t) => SelectableText("• $t",
                         style: ConstText.body(context).copyWith(color: Colors.white)))
                         .toList(),
                   ),

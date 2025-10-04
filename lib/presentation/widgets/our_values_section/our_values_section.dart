@@ -26,7 +26,7 @@ class SectionOurValues extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
 
-              Text(
+              SelectableText(
                 ConstStrings.valuesTitle,
                 style: ConstText.sectionTitle(context),
                 textAlign: TextAlign.center,

@@ -88,7 +88,7 @@ class _ProductRow extends StatelessWidget {
         borderRadius: BorderRadius.circular(ConstSize.cardRadius),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: .06),
+            color: Colors.black.withValues(alpha: 0.06),
             blurRadius: 10,
             offset: const Offset(0, 4),
           )
@@ -109,9 +109,9 @@ class _ProductRow extends StatelessWidget {
     final txt = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(item.title, style: ConstText.sectionTitle(context)),
+        SelectableText(item.title, style: ConstText.sectionTitle(context)),
         const SizedBox(height: 8),
-        Text(item.body, style: ConstText.body(context), textAlign: TextAlign.justify),
+        SelectableText(item.body, style: ConstText.body(context), textAlign: TextAlign.justify),
         const SizedBox(height: 12),
         CustomButton(
           title: ConstStrings.requestQuote,

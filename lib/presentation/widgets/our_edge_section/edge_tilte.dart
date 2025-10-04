@@ -7,7 +7,7 @@ class EdgeTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return SelectableText(
       ConstStrings.edgeTitle,
       style: ConstText.sectionTitle(context).copyWith(color: Colors.white),
       textAlign: TextAlign.center,

@@ -124,11 +124,11 @@ class _QuickFormCardState extends State<QuickFormCard> {
                   onPressed: () {
                     if (_formKey.currentState?.validate() ?? false) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Submitted ✓')),
+                        const SnackBar(content: SelectableText('Submitted ✓')),
                       );
                     }
                   },
-                  child: Text(
+                  child: SelectableText(
                     ConstStrings.formSubmit,
                     style: ConstText.navButtonText(context),
                   ),
