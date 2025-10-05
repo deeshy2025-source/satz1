@@ -8,9 +8,9 @@ class ContactUsStrings{
   static const String contactHeroImage   = "assets/images/contact_us_bg_all.png";
 
   static const String howToReachTitle    = "How to Reach Us";
-  static const String phoneLabel         = "Phone: (123) 456-7890";
-  static const String emailLabel         = "lorem@gmail.com";
-  static const String companyLocation    ="address for company ,canda ";
+  static const String phoneLabel         = "Phone: +1(438) 995-4031";
+  static const String emailLabel         = "info@satz-tech.com";
+  static const String companyLocation    ="Alberta, Canada ";
   static const String workTime           ="weekdays from 8:00 am t0 5:00 pm";
   static const String quickContactTitle  = "Quick contact";
   static const String formFirstName      = "First Name";

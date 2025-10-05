@@ -8,7 +8,7 @@ class ConstStrings {
   static const String servicesAndProducts = "Services & Products";
   static const String contactUs = "Contact Us";
   static const String requestAQuote =  "Request a Quote";
-  static const String companyEmail        = 'info@satz-tech.com';
+  static const String companyEmail   = 'info@satz-tech.com';
   static const String ourExpertise='Our Expertise';
   static const String menu='Menu';
   static const String homepage='HomePage';
@@ -32,9 +32,9 @@ class ConstStrings {
   ];
 
   static const List<String> footerContact = [
-    "📍 Address (Office Location)",
-    "📞 Phone Number",
-    "✉️ Email",
+    "📍 Alberta, Canada",
+    "📞 +1(438) 995-4031",
+    "✉️ info@satz-tech.com",
   ];
 
   static const String footerCopyright =

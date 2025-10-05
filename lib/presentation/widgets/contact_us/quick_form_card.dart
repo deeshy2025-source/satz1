@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:web/web.dart' as web;
 import '../../../../core/constants/const_colors.dart';
 import '../../../../core/constants/const_size.dart';
 import '../../../../core/constants/const_text.dart';
+import '../../../core/constants/const_strings.dart';
 import '../../../core/constants/const_strings_contact_us.dart';
 import 'app_text_field.dart';
 
@@ -15,10 +17,10 @@ class QuickFormCard extends StatefulWidget {
 class _QuickFormCardState extends State<QuickFormCard> {
   final _formKey = GlobalKey<FormState>();
   final _first = TextEditingController();
-  final _last  = TextEditingController();
+  final _last = TextEditingController();
   final _email = TextEditingController();
   final _phone = TextEditingController();
-  final _msg   = TextEditingController();
+  final _msg = TextEditingController();
 
   @override
   void dispose() {
@@ -30,9 +32,35 @@ class _QuickFormCardState extends State<QuickFormCard> {
     super.dispose();
   }
 
+  void _sendEmail() {
+    // تأكيد إن كل حاجة جاهزة قبل الفتح
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final subject = Uri.encodeComponent('Quick Contact Request');
+      final name = '${_first.text} ${_last.text}'.trim();
+
+      final body = Uri.encodeComponent('''
+New quick contact message from Satz website:
+
+👤 Name: $name
+📧 Email: ${_email.text}
+📱 Phone: ${_phone.text}
+
+📝 Message:
+${_msg.text}
+
+--------------------
+Sent automatically from Satz contact form
+''');
+
+      final gmailUrl =
+          'https://mail.google.com/mail/?view=cm&fs=1&to=${ConstStrings.companyEmail}&su=$subject&body=$body';
+
+      web.window.open(gmailUrl, '_blank');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    // Theme محلي اختياري لتحسين ألوان المؤشر/التحديد
     final localTheme = Theme.of(context).copyWith(
       textSelectionTheme: const TextSelectionThemeData(
         cursorColor: Colors.white,
@@ -105,7 +133,7 @@ class _QuickFormCardState extends State<QuickFormCard> {
 
               const SizedBox(height: ConstSize.formFieldGap),
 
-              // رسالة
+              // الرسالة
               AppTextField(
                 controller: _msg,
                 hint: ContactUsStrings.formMessage,
@@ -123,9 +151,7 @@ class _QuickFormCardState extends State<QuickFormCard> {
                   ),
                   onPressed: () {
                     if (_formKey.currentState?.validate() ?? false) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: SelectableText('Submitted ✓')),
-                      );
+                      _sendEmail(); // ← هنا الإرسال الفعلي
                     }
                   },
                   child: SelectableText(
