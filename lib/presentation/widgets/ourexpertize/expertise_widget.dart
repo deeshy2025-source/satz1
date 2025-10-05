@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:satz1/core/constants/const_strings_home_page.dart';
 import 'package:satz1/core/constants/const_text.dart';
 import 'package:satz1/presentation/widgets/ourexpertize/expertise_card.dart';
 
@@ -38,42 +39,23 @@ class ExpertiseContent extends StatelessWidget {
       builder: (context, c) {
         final isNarrow = c.maxWidth < 900;
 
-        const cards = [
-          ExpertiseCard(
-            title: "Electrical Engineering for Satellite Communication",
-            points: [
-              "High-reliability Microwave components design",
-              "Satellite feed designs",
-              "Ferrite-based components",
-              "mm-wave components",
-              "Corrugated horn antennas",
-            ],
-          ),
-          ExpertiseCard(
-            title: "Mechanical Engineering Solutions",
-            points: [
-              "Components Modeling",
-              "PIM analysis",
-              "Assembly design",
-            ],
-          ),
-          ExpertiseCard(
-            title: "Prototyping & Testing",
-            points: [
-              "Fabless company with strong ties to machine shops",
-              "Fabrication accuracy up to 0.0005-inch tolerances",
-            ],
-          ),
-        ];
+        List<ExpertiseCard> cards=[];
+
+for (int i=0;i<ConstHomePage.card.length;i++){
+  cards.add(
+    ExpertiseCard(expertiseCard: ConstHomePage.card[i]),
+  );
+}
+
 
         return Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("Our Expertise",
+            Text(ConstHomePage.ourExpertise,
                 style: ConstText.sectionTitle(context)),
             const SizedBox(height: 8),
             const Text(
-              "Pioneering the design and implementation of cutting-edges, stems",
+                ConstHomePage.ourExpertiseSubHead,
               textAlign: TextAlign.center
             ),
             const SizedBox(height: 28),

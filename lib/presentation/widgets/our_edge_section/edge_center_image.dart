@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/constants/const_strings.dart';
 import '../../../../core/constants/const_size.dart';
+import '../../../core/constants/const_strings_about_us.dart';
 
 class EdgeCenterImage extends StatelessWidget {
   const EdgeCenterImage({super.key});
@@ -17,7 +17,7 @@ class EdgeCenterImage extends StatelessWidget {
         width: size,
         height: size,
         child: Image.asset(
-          ConstStrings.edgeCenterImage, // assets/images/space_rocket.png
+          AboutUsStrings.edgeCenterImage, // assets/images/space_rocket.png
           fit: BoxFit.cover,
         ),
       ),

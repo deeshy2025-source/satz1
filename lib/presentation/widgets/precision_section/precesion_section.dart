@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:satz1/core/constants/const_colors.dart';
 import '../../../core/constants/const_strings.dart';
+import '../../../core/constants/const_strings_home_page.dart';
 import '../../../core/constants/const_text.dart';
 import '../custom_button.dart';
 import 'feature_tile.dart';
@@ -12,28 +13,15 @@ class PrecisionSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const items = [
-      FeatureTile(
-        icon: Icons.satellite_alt_outlined,
-        title: 'RF & Microwave Components',
-        text: 'High-reliability microwave design, satellite feed designs, mm-wave components.',
-      ),
-      FeatureTile(
-        icon: Icons.settings_suggest_outlined,
-        title: 'Mechanical Engineering Solutions',
-        text: 'Components modeling, PIM analysis, precision assembly design.',
-      ),
-      FeatureTile(
-        icon: Icons.precision_manufacturing_outlined,
-        title: 'Prototyping & Fabrication',
-        text: 'Fabless model; accuracy up to 0.0005".',
-      ),
-      FeatureTile(
-        icon: Icons.fact_check_outlined,
-        title: 'Testing & Validation',
-        text: 'Thermal analysis, space-grade reliability tests, compliance checks.',
-      ),
-    ];
+
+    List<FeatureTile> myItems=[];
+
+    for (int i=0;i<ConstHomePage.items.length;i++){
+      myItems.add(
+        FeatureTile(feature: ConstHomePage.items[i]),
+      );
+    }
+
 
     return Container(
       width: double.infinity,
@@ -72,8 +60,8 @@ class PrecisionSection extends StatelessWidget {
                       crossAxisSpacing: gap,
                       childAspectRatio: isNarrow ? 2.8 : 2.6,
                     ),
-                    itemCount: items.length,
-                    itemBuilder: (_, i) => items[i],
+                    itemCount: myItems.length,
+                    itemBuilder: (_, i) => myItems[i],
                   );
                 },
               ),

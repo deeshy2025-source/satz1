@@ -3,6 +3,7 @@ import '../../../../core/constants/const_size.dart';
 import '../../../../core/constants/const_text.dart';
 import '../../../../core/constants/const_strings.dart';
 import '../../../../core/constants/const_colors.dart';
+import '../../../core/constants/const_strings_about_us.dart';
 import '../custom_button.dart';
 
 class AboutTextCard extends StatelessWidget {
@@ -21,14 +22,14 @@ class AboutTextCard extends StatelessWidget {
         children: [
           // العنوان
           SelectableText(
-            ConstStrings.aboutUsTitle,
+            AboutUsStrings.aboutUsTitle,
             style: ConstText.heroSub(context),
           ),
           const SizedBox(height: 12),
 
           // النص
           SelectableText(
-            ConstStrings.aboutUsBody,
+            AboutUsStrings.aboutUsBody,
             style: ConstText.subHeadline(context),
             textAlign: TextAlign.justify,
           ),

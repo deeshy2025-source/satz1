@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:satz1/core/constants/const_strings_privacy_page.dart';
 import '../../core/constants/const_colors.dart';
 import '../../core/constants/const_size.dart';
 import '../../core/constants/const_text.dart';
@@ -56,10 +57,10 @@ class PrivacyPolicyPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(ConstStrings.privacyTitle,
+                      Text(PrivacyStrings.privacyTitle,
                           style: ConstText.sectionTitle(context).copyWith(color: Colors.white, fontSize: 32)),
                       const SizedBox(height: 8),
-                      Text('${ConstStrings.privacyLastUpdatedLabel} ${ConstStrings.privacyLastUpdatedDate}',
+                      Text('${PrivacyStrings.privacyLastUpdatedLabel} ${PrivacyStrings.privacyLastUpdatedDate}',
                           style: ConstText.body(context).copyWith(color: Colors.white70)),
                     ],
                   ),
@@ -107,28 +108,28 @@ class _PrivacyBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        p(ConstStrings.privacyIntro),
+        p(PrivacyStrings.privacyIntro),
 
-        h(ConstStrings.privacyCollectTitle),
-        p(ConstStrings.privacyCollectBody),
+        h(PrivacyStrings.privacyCollectTitle),
+        p(PrivacyStrings.privacyCollectBody),
 
-        h(ConstStrings.privacyUseTitle),
-        p(ConstStrings.privacyUseBody),
+        h(PrivacyStrings.privacyUseTitle),
+        p(PrivacyStrings.privacyUseBody),
 
-        h(ConstStrings.privacyCookiesTitle),
-        p(ConstStrings.privacyCookiesBody),
+        h(PrivacyStrings.privacyCookiesTitle),
+        p(PrivacyStrings.privacyCookiesBody),
 
-        h(ConstStrings.privacySharingTitle),
-        p(ConstStrings.privacySharingBody),
+        h(PrivacyStrings.privacySharingTitle),
+        p(PrivacyStrings.privacySharingBody),
 
-        h(ConstStrings.privacySecurityTitle),
-        p(ConstStrings.privacySecurityBody),
+        h(PrivacyStrings.privacySecurityTitle),
+        p(PrivacyStrings.privacySecurityBody),
 
-        h(ConstStrings.privacyRightsTitle),
-        p(ConstStrings.privacyRightsBody),
+        h(PrivacyStrings.privacyRightsTitle),
+        p(PrivacyStrings.privacyRightsBody),
 
-        h(ConstStrings.privacyContactTitle),
-        p('${ConstStrings.privacyContactBody}\n${ConstStrings.companyEmail}'),
+        h(PrivacyStrings.privacyContactTitle),
+        p('${PrivacyStrings.privacyContactBody}\n${ConstStrings.companyEmail}'),
       ],
     );
   }

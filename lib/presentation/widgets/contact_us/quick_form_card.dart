@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/const_colors.dart';
 import '../../../../core/constants/const_size.dart';
 import '../../../../core/constants/const_text.dart';
-import '../../../../core/constants/const_strings.dart';
+import '../../../core/constants/const_strings_contact_us.dart';
 import 'app_text_field.dart';
 
 class QuickFormCard extends StatefulWidget {
@@ -59,7 +59,7 @@ class _QuickFormCardState extends State<QuickFormCard> {
                   Expanded(
                     child: AppTextField(
                       controller: _first,
-                      hint: ConstStrings.formFirstName,
+                      hint: ContactUsStrings.formFirstName,
                       validator: (v) =>
                       (v == null || v.trim().isEmpty) ? 'Required' : null,
                     ),
@@ -68,7 +68,7 @@ class _QuickFormCardState extends State<QuickFormCard> {
                   Expanded(
                     child: AppTextField(
                       controller: _last,
-                      hint: ConstStrings.formLastName,
+                      hint: ContactUsStrings.formLastName,
                     ),
                   ),
                 ],
@@ -82,7 +82,7 @@ class _QuickFormCardState extends State<QuickFormCard> {
                   Expanded(
                     child: AppTextField(
                       controller: _email,
-                      hint: ConstStrings.formEmail,
+                      hint: ContactUsStrings.formEmail,
                       keyboardType: TextInputType.emailAddress,
                       validator: (v) {
                         if (v == null || v.isEmpty) return 'Required';
@@ -96,7 +96,7 @@ class _QuickFormCardState extends State<QuickFormCard> {
                   Expanded(
                     child: AppTextField(
                       controller: _phone,
-                      hint: ConstStrings.formPhone,
+                      hint: ContactUsStrings.formPhone,
                       keyboardType: TextInputType.phone,
                     ),
                   ),
@@ -108,7 +108,7 @@ class _QuickFormCardState extends State<QuickFormCard> {
               // رسالة
               AppTextField(
                 controller: _msg,
-                hint: ConstStrings.formMessage,
+                hint: ContactUsStrings.formMessage,
                 maxLines: 6,
               ),
 
@@ -129,7 +129,7 @@ class _QuickFormCardState extends State<QuickFormCard> {
                     }
                   },
                   child: SelectableText(
-                    ConstStrings.formSubmit,
+                    ContactUsStrings.formSubmit,
                     style: ConstText.navButtonText(context),
                   ),
                 ),
