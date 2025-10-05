@@ -21,7 +21,7 @@ class SectionHowToReach extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: styleBody),
+                SelectableText(title, style: styleBody),
               ],
             ),
           ),
