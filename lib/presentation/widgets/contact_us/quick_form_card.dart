@@ -154,7 +154,7 @@ Sent automatically from Satz contact form
                       _sendEmail(); // ← هنا الإرسال الفعلي
                     }
                   },
-                  child: SelectableText(
+                  child: Text(
                     ContactUsStrings.formSubmit,
                     style: ConstText.navButtonText(context),
                   ),
