@@ -35,7 +35,7 @@ class SatzFooter extends StatelessWidget {
                 const SizedBox(width: ConstSize.footerGutter),
 
                 // Quick Links
-                Expanded(
+                const Expanded(
                   flex: 2,
                   child: FooterLinksColumn(
                     title: ConstStrings.footerQuickLinksTitle,
@@ -46,7 +46,7 @@ class SatzFooter extends StatelessWidget {
                 const SizedBox(width: ConstSize.footerGutter),
 
                 // Contact
-                Expanded(
+                const Expanded(
                   flex: 2,
                   child: FooterLinksColumn(
                     title: ConstStrings.footerContactTitle,
@@ -57,7 +57,7 @@ class SatzFooter extends StatelessWidget {
                 const SizedBox(width: ConstSize.footerGutter),
 
                 // Legal
-                Expanded(
+                const Expanded(
                   flex: 2,
                   child: FooterLinksColumn(
                     title: ConstStrings.footerLegalTitle,
@@ -75,23 +75,23 @@ class SatzFooter extends StatelessWidget {
                       children: columns,
                     )
                   else
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const FooterLogoSocial(),
-                        const SizedBox(height: ConstSize.footerGutter),
+                        FooterLogoSocial(),
+                        SizedBox(height: ConstSize.footerGutter),
 
                         FooterLinksColumn(
                           title: ConstStrings.footerQuickLinksTitle,
                           items: ConstStrings.footerQuickLinks,
                         ),
-                        const SizedBox(height: ConstSize.footerGutter),
+                        SizedBox(height: ConstSize.footerGutter),
 
                         FooterLinksColumn(
                           title: ConstStrings.footerContactTitle,
                           items: ConstStrings.footerContact,
                         ),
-                        const SizedBox(height: ConstSize.footerGutter),
+                        SizedBox(height: ConstSize.footerGutter),
 
                         FooterLinksColumn(
                           title: ConstStrings.footerLegalTitle,

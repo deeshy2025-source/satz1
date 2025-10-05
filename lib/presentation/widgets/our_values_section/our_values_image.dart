@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/constants/const_strings.dart';
 import '../../../../core/constants/const_size.dart';
+import '../../../core/constants/const_strings_about_us.dart';
 
 class ValuesImage extends StatelessWidget {
   const ValuesImage({super.key});
@@ -18,7 +18,7 @@ class ValuesImage extends StatelessWidget {
         height: h,
         width: h, // ✅ علشان تبقى مربعة
         child: Image.asset(
-          ConstStrings.valuesImage,  // our_Values.png
+          AboutUsStrings.valuesImage,  // our_Values.png
           fit: BoxFit.contain,       // ✅ بدل cover
         ),
       ),

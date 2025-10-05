@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/const_colors.dart';
 import '../../../core/constants/const_size.dart';
+import '../../../core/constants/const_strings_contact_us.dart';
 import '../../../core/constants/const_text.dart';
 import '../../../core/constants/const_strings.dart';
 import '../custom_button.dart';
@@ -18,7 +19,7 @@ class SectionContactHero extends StatelessWidget {
       height: heroHeight,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(ConstStrings.contactHeroImage),
+          image: AssetImage(ContactUsStrings.contactHeroImage),
           fit: BoxFit.cover, // الصورة كخلفية كاملة
         ),
       ),
@@ -32,14 +33,14 @@ class SectionContactHero extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SelectableText(
-                ConstStrings.contactPageTitle,
+                ContactUsStrings.contactPageTitle,
                 style: ConstText.sectionTitle(context).copyWith(
                   color: Colors.white,
                 ),
               ),
               const SizedBox(height: 12),
               SelectableText(
-                ConstStrings.contactHeroBody,
+                ContactUsStrings.contactHeroBody,
                 style: ConstText.body(context).copyWith(
                   color: Colors.white70,
                 ),
@@ -50,7 +51,7 @@ class SectionContactHero extends StatelessWidget {
                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CustomButton(
-                    title: ConstStrings.productsHeroTitle,
+                    title: ConstStrings.servicesAndProducts,
                     onTap: () => Navigator.pushNamed(context, '/products'),
                     color: ConstColors.mid,   // لون مختلف
                     hPadding: 40,             // زرار أعرض

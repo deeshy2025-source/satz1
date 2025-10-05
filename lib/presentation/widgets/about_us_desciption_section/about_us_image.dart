@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/constants/const_size.dart';
-import '../../../../core/constants/const_strings.dart';
+import '../../../core/constants/const_strings_about_us.dart';
 
 class AboutCapsuleImage extends StatelessWidget {
   const AboutCapsuleImage({super.key});
@@ -19,7 +19,7 @@ class AboutCapsuleImage extends StatelessWidget {
         child: AspectRatio(
           aspectRatio: 16 / 9,
           child: Image.asset(
-            ConstStrings.aboutUsImage,
+            AboutUsStrings.aboutUsImage,
             fit: BoxFit.cover,
             height: imgH,
           ),

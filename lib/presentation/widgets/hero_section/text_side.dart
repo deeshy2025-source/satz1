@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:satz1/core/constants/const_strings_home_page.dart';
 
 import '../../../core/constants/const_colors.dart';
 import '../../../core/constants/const_text.dart';
@@ -17,9 +18,9 @@ class TextSide extends StatelessWidget {
         const SizedBox(height: 8),
          SelectableText(ConstStrings.appName, style: ConstText.headline(context)),
         const SizedBox(height: 16),
-        SelectableText(ConstStrings.heroSub1, style: ConstText.subHeadline(context),textAlign: TextAlign.justify,),
+        SelectableText(ConstHomePage.heroSub1, style: ConstText.subHeadline(context),textAlign: TextAlign.justify,),
         const SizedBox(height: 8),
-        SelectableText(ConstStrings.heroSub2, style: ConstText.subHeadline(context)),
+        SelectableText(ConstHomePage.heroSub2, style: ConstText.subHeadline(context)),
         const SizedBox(height: 20),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -27,7 +28,7 @@ class TextSide extends StatelessWidget {
             color: ConstColors.mid,
             borderRadius: BorderRadius.circular(14),
           ),
-          child: SelectableText(ConstStrings.heroHighText,
+          child: SelectableText(ConstHomePage.heroHighText,
               style: ConstText.highlight(context)),
         ),
       ],

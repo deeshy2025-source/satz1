@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:satz1/core/constants/const_strings_home_page.dart';
 import '../../../core/constants/const_colors.dart';
 import '../../../core/constants/const_size.dart';
 import '../../../core/constants/const_text.dart';
@@ -45,7 +46,7 @@ class UnderHero extends StatelessWidget {
 
               // ✅ النص
               final text = SelectableText(
-                ConstStrings.heroHighlight,
+                ConstHomePage.heroHighlight,
                 style: ConstText.body(context).copyWith(color: Colors.white),
                 textAlign: TextAlign.justify,
               );

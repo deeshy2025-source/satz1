@@ -1,32 +1,30 @@
 
 import 'package:flutter/material.dart';
+import 'package:satz1/core/classes/precesion_section_data.dart';
 import 'package:satz1/core/constants/const_text.dart';
 import '../../../core/constants/const_colors.dart';
 import '../../../core/constants/const_size.dart';
 
 class FeatureTile extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final String text;
 
-  const FeatureTile({
+  final PrecisionSectionData  feature;
+
+   const FeatureTile({
     super.key,
-    required this.icon,
-    required this.title,
-    required this.text,
+    required this.feature
   });
 
   @override
   Widget build(BuildContext context) {
     return Container
       (
-      constraints: BoxConstraints(minHeight: ConstSize.sectionHeight * 0.35),
+      constraints: const BoxConstraints(minHeight: ConstSize.sectionHeight * 0.35),
       padding: const EdgeInsets.all(ConstSize.padding_16),
       decoration: BoxDecoration(
         // slightly lighter panel over the dark band
-        color: ConstColors.sectionBg1.withOpacity(0.06),
+        color: ConstColors.sectionBg1.withValues(alpha:0.06),
         borderRadius: BorderRadius.circular(ConstSize.padding_16),
-        border: Border.all(color: ConstColors.testBasicColor.withOpacity(0.15)),
+        border: Border.all(color: ConstColors.testBasicColor.withValues(alpha: 0.15)),
       ),
       child: Row(
         children: [
@@ -35,7 +33,7 @@ class FeatureTile extends StatelessWidget {
             height: ConstSize.padding_16 * 3.5,
             alignment: Alignment.center,
 
-            child: Icon(icon, size: ConstSize.padding_16 * 3, color: ConstColors.testBasicColor),
+            child: Icon(feature.icon, size: ConstSize.padding_16 * 3, color: ConstColors.testBasicColor),
           ),
           const SizedBox(width: ConstSize.padding_16),
           Expanded(
@@ -43,11 +41,11 @@ class FeatureTile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SelectableText(title,
+                SelectableText(feature.title,
                     style: ConstText.TextMid(context)
                         .copyWith(color: ConstColors.testBasicColor, fontWeight: FontWeight.w700)),
                 const SizedBox(height: 6),
-                SelectableText(text,
+                SelectableText(feature.text,
                     style:   ConstText.body(context)
                     .copyWith(color: ConstColors.testBasicColor)),
               ],

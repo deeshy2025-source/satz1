@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:satz1/core/constants/const_strings.dart';
 import '../../../core/constants/const_text.dart';
 import '../../../core/constants/const_size.dart';
 import '../../../core/constants/const_colors.dart';
@@ -27,20 +28,19 @@ class NavActions extends StatelessWidget {
     if (!compact) {
       return Row(
         children: [
-          _NavLink('HomePage', onTap: onHome ?? () {}),
-          _NavLink('Our Expertise', onTap: onExpertise ?? () {}),
-          _NavLink('Services & Products', onTap: onServices ?? () =>Navigator.pushNamed(context, '/products')),
-          _NavButton('About Us', onTap: onAbout ?? () {}, buttonColor: ConstColors.mid),
-          _NavButton('Contact Us', onTap: onContact ?? () {}, buttonColor: ConstColors.primary),
+          _NavLink(ConstStrings.homepage, onTap: onHome ?? () {}),
+          _NavLink(ConstStrings.ourExpertise, onTap: onExpertise ?? () {}),
+          _NavLink(ConstStrings.servicesAndProducts, onTap: onServices ?? () =>Navigator.pushNamed(context, '/products')),
+          _NavButton(ConstStrings.aboutUs, onTap: onAbout ?? () {}, buttonColor: ConstColors.mid),
+          _NavButton(ConstStrings.contactUs, onTap: onContact ?? () {}, buttonColor: ConstColors.primary),
         ],
       );
     }
 
-    // شاشة صغيرة → زر Menu يفتح endDrawer
     return Builder(
       builder: (ctx) => IconButton(
         icon: const Icon(Icons.menu, color: ConstColors.primary),
-        tooltip: 'Menu',
+        tooltip: ConstStrings.menu,
         onPressed: () => Scaffold.of(ctx).openEndDrawer(),
       ),
     );
@@ -59,7 +59,7 @@ class _NavLink extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(8),
-        hoverColor: Colors.black.withValues(alpha:0.04),
+        hoverColor: Colors.black.withValues(alpha: 0.04),
         child: MouseRegion(
           cursor: SystemMouseCursors.click,
           child: Padding(

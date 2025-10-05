@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:satz1/core/constants/const_strings.dart';
 
 class NavEndDrawer extends StatelessWidget {
   const NavEndDrawer({super.key});
@@ -11,38 +12,38 @@ class NavEndDrawer extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             const ListTile(
-              title: Text('Menu', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+              title: Text(ConstStrings.menu, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
             ),
             const Divider(),
             ListTile(
-              title: const Text('HomePage'),
+              title: const Text(ConstStrings.homepage),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, '/');
               },
             ),
             ListTile(
-              title: const Text('About Us'),
+              title: const Text(ConstStrings.aboutUs),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, '/about');
               },
             ),
             ListTile(
-              title: const Text('Our Expertise'),
+              title: const Text(ConstStrings.ourExpertise),
               onTap: () {
                 Navigator.pop(context);
 
               },
             ),
             ListTile(
-              title: const Text('Services & Products'),
+              title: const Text(ConstStrings.servicesAndProducts),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: const Text('Contact Us'),
+              title: const Text(ConstStrings.contactUs),
               onTap: () {
                 Navigator.pop(context);
               },

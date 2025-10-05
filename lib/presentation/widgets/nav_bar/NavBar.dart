@@ -42,7 +42,6 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
                   const Spacer(),
                   NavActions(
                     compact: compact,
-                    // ✅ مرّر الكولباكس للروابط/الأزرار
                     onHome: onHome,
                     onExpertise: onExpertise,
                     onServices: onServices,

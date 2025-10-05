@@ -1,5 +1,7 @@
 // lib/presentation/widgets/products/section_products_list.dart
 import 'package:flutter/material.dart';
+import 'package:satz1/core/classes/products_data_class.dart';
+import 'package:satz1/core/constants/const_strings_products.dart';
 import '../../../core/constants/const_size.dart';
 import '../../../core/constants/const_text.dart';
 import '../../../core/constants/const_strings.dart';
@@ -12,18 +14,7 @@ class ProductsListSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final items = [
-      ProductItem(
-        image: ConstStrings.productSSPAImage,
-        title: ConstStrings.prodSSPATitle,
-        body: ConstStrings.prodSSPABody,
-      ),
-      ProductItem(
-        image: ConstStrings.productMonoImage,
-        title: ConstStrings.prodMonoTitle,
-        body: ConstStrings.prodMonoBody,
-      ),
-    ];
+    final items =ProductsPageStrings.products;
 
     return Container(
       color: Colors.white,
@@ -61,15 +52,9 @@ class ProductsListSection extends StatelessWidget {
   }
 }
 
-class ProductItem {
-  final String image;
-  final String title;
-  final String body;
-  ProductItem({required this.image, required this.title, required this.body});
-}
 
 class _ProductRow extends StatelessWidget {
-  final ProductItem item;
+  final ProductDataClass item;
   final bool imageLeft;
   final bool narrow;
 
@@ -94,13 +79,13 @@ class _ProductRow extends StatelessWidget {
           )
         ],
       ),
-      padding: const EdgeInsets.all(16), // 👈 كبّرنا البادينج عشان الإطار يظهر أكتر
+      padding: const EdgeInsets.all(24), // 👈 كبّرنا البادينج عشان الإطار يظهر أكتر
       child: ClipRRect(
         borderRadius: BorderRadius.circular(ConstSize.cardRadius - 8),
         child: AspectRatio(
-          // نخلي الصورة أصغر شوية وثابتة النسبة
+
           aspectRatio: narrow ? 4 / 3 : 16 / 9,
-          child: Image.asset(item.image, fit: BoxFit.cover),
+          child: Image.asset(item.image, fit: BoxFit.fill),
         ),
       ),
     );
@@ -111,10 +96,10 @@ class _ProductRow extends StatelessWidget {
       children: [
         SelectableText(item.title, style: ConstText.sectionTitle(context)),
         const SizedBox(height: 8),
-        SelectableText(item.body, style: ConstText.body(context), textAlign: TextAlign.justify),
+        SelectableText(item.description, style: ConstText.body(context), textAlign: TextAlign.justify),
         const SizedBox(height: 12),
         CustomButton(
-          title: ConstStrings.requestQuote,
+          title: ConstStrings.requestAQuote,
           onTap: () => Navigator.pushNamed(context, '/contact'),
           color: ConstColors.primary,
           hPadding: 28,
