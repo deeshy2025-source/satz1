@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:satz1/core/constants/const_strings_products.dart';
 import '../../../core/constants/const_colors.dart';
 import '../../../core/constants/const_size.dart';
 import '../../../core/constants/const_text.dart';
@@ -26,7 +27,7 @@ class ProductsHeroSection extends StatelessWidget {
                 child: AspectRatio(
                   aspectRatio: isWide ? 16 / 9 : 4 / 3, // أبعاد ثابتة للصغير
                   child: Image.asset(
-                    ConstStrings.productsHeroImage,
+                    ProductsPageStrings.productsHeroImage,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -38,19 +39,19 @@ class ProductsHeroSection extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      ConstStrings.productsHeroTitle,
+                    SelectableText(
+                      ConstStrings.servicesAndProducts,
                       style: ConstText.sectionTitle(context).copyWith(color: Colors.white),
                     ),
                     const SizedBox(height: 12),
-                    Text(
-                      ConstStrings.productsHeroBody,
+                    SelectableText(
+                      ProductsPageStrings.productsHeroBody,
                       style: ConstText.body(context).copyWith(color: Colors.white70),
                       textAlign: TextAlign.justify,
                     ),
                     const SizedBox(height: 16),
                     CustomButton(
-                      title: ConstStrings.productsHeroButton,
+                      title:  ProductsPageStrings.productsHeroButton,
                       onTap: () => Navigator.pushNamed(context, '/contact'),
                       color: ConstColors.mid,   // لون مختلف
                       hPadding: 40,             // زرار أعرض

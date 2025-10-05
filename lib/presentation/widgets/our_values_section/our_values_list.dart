@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../core/constants/const_strings.dart';
 import '../../../../core/constants/const_text.dart';
 import '../../../../core/constants/const_size.dart';
+import '../../../core/constants/const_strings_about_us.dart';
 
 class ValuesList extends StatelessWidget {
   const ValuesList({super.key});
@@ -13,13 +13,13 @@ class ValuesList extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // العنوان بولد
-          Text(
+          SelectableText(
             title,
             style: ConstText.sectionTitle(context).copyWith(fontSize: 22),
           ),
           const SizedBox(height: 8),
           // الوصف
-          Text(
+          SelectableText(
             body,
             style: ConstText.body(context),
             textAlign: TextAlign.justify,
@@ -37,11 +37,11 @@ class ValuesList extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _valueItem(context,
-              ConstStrings.valuesItem1Title, ConstStrings.valuesItem1Body),
+              AboutUsStrings.valuesItem1Title, AboutUsStrings.valuesItem1Body),
           _valueItem(context,
-              ConstStrings.valuesItem2Title, ConstStrings.valuesItem2Body),
+              AboutUsStrings.valuesItem2Title, AboutUsStrings.valuesItem2Body),
           _valueItem(context,
-              ConstStrings.valuesItem3Title, ConstStrings.valuesItem3Body),
+              AboutUsStrings.valuesItem3Title, AboutUsStrings.valuesItem3Body),
         ],
       ),
     );

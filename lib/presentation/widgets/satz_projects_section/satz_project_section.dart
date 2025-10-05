@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:satz1/core/constants/const_strings_home_page.dart';
 import '../../../core/constants/const_colors.dart';
 import '../../../core/constants/const_size.dart';
 import '../../../core/constants/const_text.dart';
-import '../../../core/constants/const_strings.dart';
 import '../custom_button.dart';
 
 class SatzProjects extends StatelessWidget {
@@ -34,7 +34,7 @@ class SatzProjects extends StatelessWidget {
                   child: AspectRatio(
                     aspectRatio: 16 / 9,
                     child: Image.asset(
-                      ConstStrings.satzProjectsImage, // assets/images/sat1.jpeg
+                      ConstHomePage.satzProjectsImage, // assets/images/sat1.jpeg
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -46,17 +46,17 @@ class SatzProjects extends StatelessWidget {
                 isWide ? CrossAxisAlignment.start : CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(ConstStrings.satzProjectsTitle,
+                  SelectableText(ConstHomePage.satzProjectsTitle,
                       style: ConstText.sectionTitle(context)),
                   const SizedBox(height: 12),
-                  Text(
-                    ConstStrings.satzProjectsBody,
+                  SelectableText(
+                    ConstHomePage.satzProjectsBody,
                     style: ConstText.body(context),
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 20),
                   CustomButton(
-                    title: ConstStrings.satzProjectsButton,
+                    title: ConstHomePage.satzProjectsButton,
                     onTap: () => Navigator.pushNamed(context, '/products'),
                     color: ConstColors.mid,   // لون مختلف
                     hPadding: 40,             // زرار أعرض

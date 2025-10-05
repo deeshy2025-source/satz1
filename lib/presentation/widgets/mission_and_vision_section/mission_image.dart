@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/constants/const_strings.dart';
 import '../../../../core/constants/const_size.dart';
+import '../../../core/constants/const_strings_about_us.dart';
 
 class MissionImage extends StatelessWidget {
   const MissionImage({super.key});
@@ -15,7 +15,7 @@ class MissionImage extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(ConstSize.missionImageRadius),
       child: Image.asset(
-        ConstStrings.missionImage,
+        AboutUsStrings.missionImage,
         fit: BoxFit.cover,
         height: imgHeight,
       ),

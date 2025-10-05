@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/const_size.dart';
+import '../../../core/constants/const_strings_contact_us.dart';
 import '../../../core/constants/const_text.dart';
-import '../../../core/constants/const_strings.dart';
 
 class SectionHowToReach extends StatelessWidget {
   const SectionHowToReach({super.key});
@@ -38,32 +38,32 @@ class SectionHowToReach extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(ConstStrings.howToReachTitle, style: styleTitle),
+              Text(ContactUsStrings.howToReachTitle, style: styleTitle),
               const SizedBox(height: 24),
               Wrap(
                 spacing: 32, runSpacing: 16, alignment: WrapAlignment.spaceBetween,
                 children: [
                   SizedBox(
                     width: 520,
-                    child: item(Icons.phone, ConstStrings.phoneLabel),
+                    child: item(Icons.phone, ContactUsStrings.phoneLabel),
                   ),
                   SizedBox(
                     width: 520,
-                    child: item(Icons.mail, ConstStrings.emailLabel),
+                    child: item(Icons.mail, ContactUsStrings.emailLabel),
                   ),
                 ],
               ),
-              SizedBox(height: 24,),
+              const SizedBox(height: 24,),
               Wrap(
                 spacing: 32, runSpacing: 16, alignment: WrapAlignment.spaceBetween,
                 children: [
                   SizedBox(
                     width: 520,
-                    child: item(Icons.location_on_outlined, ConstStrings.companyLocation),
+                    child: item(Icons.location_on_outlined, ContactUsStrings.companyLocation),
                   ),
                   SizedBox(
                     width: 520,
-                    child: item(Icons.watch_later_outlined, ConstStrings.workTime),
+                    child: item(Icons.watch_later_outlined, ContactUsStrings.workTime),
                   ),
                 ],
               ),

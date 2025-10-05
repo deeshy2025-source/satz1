@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:satz1/core/constants/const_strings_contact_us.dart';
 import '../../../../core/constants/const_colors.dart';
 import '../../../../core/constants/const_text.dart';
-import '../../../../core/constants/const_strings.dart';
+
 
 class QuickBadge extends StatelessWidget {
   const QuickBadge({super.key});
@@ -16,8 +17,8 @@ class QuickBadge extends StatelessWidget {
         gradient: ConstColors.heroGradient,
       ),
       alignment: Alignment.center,
-      child: Text(
-        ConstStrings.quickContactTitle,
+      child: SelectableText(
+        ContactUsStrings.quickContactTitle,
         textAlign: TextAlign.center,
         style: ConstText.sectionTitle(context)
             .copyWith(color: Colors.white, fontSize: 18),

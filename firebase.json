@@ -1,1 +1,28 @@
-{"flutter":{"platforms":{"dart":{"lib/firebase_options.dart":{"projectId":"staz-v1","configurations":{"web":"1:467900017815:web:a3e86166af53a0ffe10dd2"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "staz-v1",
+          "configurations": {
+            "web": "1:467900017815:web:a3e86166af53a0ffe10dd2"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

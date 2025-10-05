@@ -3,6 +3,7 @@ import '../../../../core/constants/const_size.dart';
 import '../../../../core/constants/const_text.dart';
 import '../../../../core/constants/const_strings.dart';
 import '../../../../core/constants/const_colors.dart';
+import '../../../core/constants/const_strings_about_us.dart';
 import '../custom_button.dart';
 
 class AboutTextCard extends StatelessWidget {
@@ -20,39 +21,20 @@ class AboutTextCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // العنوان
-          Text(
-            ConstStrings.aboutUsTitle,
+          SelectableText(
+            AboutUsStrings.aboutUsTitle,
             style: ConstText.heroSub(context),
           ),
           const SizedBox(height: 12),
 
           // النص
-          Text(
-            ConstStrings.aboutUsBody,
+          SelectableText(
+            AboutUsStrings.aboutUsBody,
             style: ConstText.subHeadline(context),
             textAlign: TextAlign.justify,
           ),
           const SizedBox(height: 16),
 
-          // زرار
-          // Center(
-          //   child: ElevatedButton(
-          //
-          //     onPressed: () {},
-          //     style: ElevatedButton.styleFrom(
-          //       backgroundColor: ConstColors.primary,
-          //       shape: RoundedRectangleBorder(
-          //         borderRadius: BorderRadius.circular(ConstSize.aboutButtonRadius),
-          //       ),
-          //       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-          //       elevation: 0,
-          //     ),
-          //     child: Text(
-          //       ConstStrings.contactUs,
-          //       style: ConstText.navButtonText(context),
-          //     ),
-          //   ),
-          // ),
           Center(
             child: CustomButton(
               title: ConstStrings.contactUs,

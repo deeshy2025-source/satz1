@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/const_size.dart';
-import '../../../core/constants/const_strings.dart';
+import '../../../core/constants/const_strings_about_us.dart';
 import '../../../core/constants/const_text.dart';
 import 'our_values_image.dart';
 import 'our_values_list.dart';
@@ -26,8 +26,8 @@ class SectionOurValues extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
 
-              Text(
-                ConstStrings.valuesTitle,
+              SelectableText(
+                AboutUsStrings.valuesTitle,
                 style: ConstText.sectionTitle(context),
                 textAlign: TextAlign.center,
               ),

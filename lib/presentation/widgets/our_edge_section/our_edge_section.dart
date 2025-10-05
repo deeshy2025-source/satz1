@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/const_colors.dart';
 import '../../../core/constants/const_size.dart';
-import '../../../core/constants/const_strings.dart';
+import '../../../core/constants/const_strings_about_us.dart';
 import '../../../core/constants/const_text.dart';
 import 'edge_bullets_column.dart';
 import 'edge_center_image.dart';
@@ -38,10 +38,10 @@ class SectionOurEdge extends StatelessWidget {
                     // يسار: Technical Mastery
                     Expanded(
                       child: EdgeBulletsColumn(
-                        title: ConstStrings.edgeLeftTitle,
+                        title: AboutUsStrings.edgeLeftTitle,
                         boldItems: [
-                          (ConstStrings.edgeLeftItem1Title, ConstStrings.edgeLeftItem1Body),
-                          (ConstStrings.edgeLeftItem2Title, ConstStrings.edgeLeftItem2Body),
+                          (AboutUsStrings.edgeLeftItem1Title, AboutUsStrings.edgeLeftItem1Body),
+                          (AboutUsStrings.edgeLeftItem2Title,AboutUsStrings.edgeLeftItem2Body),
                         ],
                         normalItems: [],
                         intro: "",
@@ -58,10 +58,10 @@ class SectionOurEdge extends StatelessWidget {
                     // يمين: End-to-End Ownership
                     Expanded(
                       child: EdgeBulletsColumn(
-                        title: ConstStrings.edgeRightTitle,
-                        intro: ConstStrings.edgeRightIntro,
+                        title: AboutUsStrings.edgeRightTitle,
+                        intro: AboutUsStrings.edgeRightIntro,
                         boldItems: [],
-                        normalItems: ConstStrings.edgeRightBullets,
+                        normalItems: AboutUsStrings.edgeRightBullets,
                         alignStart: false,
                       ),
                     ),
@@ -75,10 +75,10 @@ class SectionOurEdge extends StatelessWidget {
                     EdgeCenterImage(),
                     SizedBox(height: ConstSize.edgeGap),
                     EdgeBulletsColumn(
-                      title: ConstStrings.edgeLeftTitle,
+                      title: AboutUsStrings.edgeLeftTitle,
                       boldItems: [
-                        (ConstStrings.edgeLeftItem1Title, ConstStrings.edgeLeftItem1Body),
-                        (ConstStrings.edgeLeftItem2Title, ConstStrings.edgeLeftItem2Body),
+                        (AboutUsStrings.edgeLeftItem1Title,AboutUsStrings.edgeLeftItem1Body),
+                        (AboutUsStrings.edgeLeftItem2Title, AboutUsStrings.edgeLeftItem2Body),
                       ],
                       normalItems: [],
                       intro: "",
@@ -86,10 +86,10 @@ class SectionOurEdge extends StatelessWidget {
                     ),
                     SizedBox(height: ConstSize.edgeGap),
                     EdgeBulletsColumn(
-                      title: ConstStrings.edgeRightTitle,
-                      intro: ConstStrings.edgeRightIntro,
+                      title: AboutUsStrings.edgeRightTitle,
+                      intro: AboutUsStrings.edgeRightIntro,
                       boldItems: [],
-                      normalItems: ConstStrings.edgeRightBullets,
+                      normalItems: AboutUsStrings.edgeRightBullets,
                       alignStart: false,
                     ),
                   ],
@@ -101,14 +101,14 @@ class SectionOurEdge extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    ConstStrings.edgeBottomTitle,
+                  SelectableText(
+                    AboutUsStrings.edgeBottomTitle,
                     style: ConstText.sectionTitle(context).copyWith(color: Colors.white),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: ConstSize.edgeSectionSpacing),
-                  Text(
-                    ConstStrings.edgeBottomIntro,
+                  SelectableText(
+                    AboutUsStrings.edgeBottomIntro,
                     style: ConstText.body(context).copyWith(color: Colors.white70),
                     textAlign: TextAlign.center,
                   ),
@@ -118,8 +118,8 @@ class SectionOurEdge extends StatelessWidget {
                     alignment: WrapAlignment.center,
                     spacing: 24,
                     runSpacing: 8,
-                    children: ConstStrings.edgeBottomBullets
-                        .map((t) => Text("• $t",
+                    children: AboutUsStrings.edgeBottomBullets
+                        .map((t) => SelectableText("• $t",
                         style: ConstText.body(context).copyWith(color: Colors.white)))
                         .toList(),
                   ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:satz1/core/constants/const_strings_home_page.dart';
 import '../../../core/constants/const_colors.dart';
 import '../../../core/constants/const_size.dart';
 import '../../../core/constants/const_text.dart';
@@ -30,16 +32,21 @@ class UnderHero extends StatelessWidget {
               // ✅ اللوجو
               final logo = Padding(
                 padding: const EdgeInsets.only(right: ConstSize.underHeroPaddingH),
-                child: Image.asset(
-                  'assets/images/LogoDark.png',
+                child: SvgPicture.asset(
+                  ConstStrings.logoLight,
                   height: ConstSize.underHeroLogoH,
                   fit: BoxFit.contain,
+                  colorFilter: const ColorFilter.mode(
+                      ConstColors.lightColor,
+                      BlendMode.srcIn
+                  ),
                 ),
+
               );
 
               // ✅ النص
-              final text = Text(
-                ConstStrings.heroHighlight,
+              final text = SelectableText(
+                ConstHomePage.heroHighlight,
                 style: ConstText.body(context).copyWith(color: Colors.white),
                 textAlign: TextAlign.justify,
               );

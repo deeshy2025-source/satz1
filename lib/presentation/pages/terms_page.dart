@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../core/constants/const_colors.dart';
 import '../../core/constants/const_size.dart';
+import '../../core/constants/const_strings_terms_page.dart';
 import '../../core/constants/const_text.dart';
 import '../../core/constants/const_strings.dart';
 import '../widgets/nav_bar/NavBar.dart';
@@ -56,10 +57,10 @@ class TermsPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(ConstStrings.termsTitle,
+                      Text(TermsPageStrings.termsTitle,
                           style: ConstText.sectionTitle(context).copyWith(color: Colors.white, fontSize: 32)),
                       const SizedBox(height: 8),
-                      Text('${ConstStrings.termsLastUpdatedLabel} ${ConstStrings.termsLastUpdatedDate}',
+                      Text('${TermsPageStrings.termsLastUpdatedLabel} ${TermsPageStrings.termsLastUpdatedDate}',
                           style: ConstText.body(context).copyWith(color: Colors.white70)),
                     ],
                   ),
@@ -107,37 +108,37 @@ class _TermsBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        p(ConstStrings.termsIntro),
+        p(TermsPageStrings.termsIntro),
 
-        h(ConstStrings.termsUseTitle),
-        p(ConstStrings.termsUseBody),
+        h(TermsPageStrings.termsUseTitle),
+        p(TermsPageStrings.termsUseBody),
 
-        h(ConstStrings.termsAccountsTitle),
-        p(ConstStrings.termsAccountsBody),
+        h(TermsPageStrings.termsAccountsTitle),
+        p(TermsPageStrings.termsAccountsBody),
 
-        h(ConstStrings.termsIPTitle),
-        p(ConstStrings.termsIPBody),
+        h(TermsPageStrings.termsIPTitle),
+        p(TermsPageStrings.termsIPBody),
 
-        h(ConstStrings.termsLinksTitle),
-        p(ConstStrings.termsLinksBody),
+        h(TermsPageStrings.termsLinksTitle),
+        p(TermsPageStrings.termsLinksBody),
 
-        h(ConstStrings.termsTerminationTitle),
-        p(ConstStrings.termsTerminationBody),
+        h(TermsPageStrings.termsTerminationTitle),
+        p(TermsPageStrings.termsTerminationBody),
 
-        h(ConstStrings.termsDisclaimerTitle),
-        p(ConstStrings.termsDisclaimerBody),
+        h(TermsPageStrings.termsDisclaimerTitle),
+        p(TermsPageStrings.termsDisclaimerBody),
 
-        h(ConstStrings.termsLiabilityTitle),
-        p(ConstStrings.termsLiabilityBody),
+        h(TermsPageStrings.termsLiabilityTitle),
+        p(TermsPageStrings.termsLiabilityBody),
 
-        h(ConstStrings.termsGoverningLawTitle),
-        p(ConstStrings.termsGoverningLawBody),
+        h(TermsPageStrings.termsGoverningLawTitle),
+        p(TermsPageStrings.termsGoverningLawBody),
 
-        h(ConstStrings.termsChangesTitle),
-        p(ConstStrings.termsChangesBody),
+        h(TermsPageStrings.termsChangesTitle),
+        p(TermsPageStrings.termsChangesBody),
 
-        h(ConstStrings.termsContactTitle),
-        p('${ConstStrings.termsContactBody}\n${ConstStrings.companyEmail}'),
+        h(TermsPageStrings.termsContactTitle),
+        p('${TermsPageStrings.termsContactBody}\n${ConstStrings.companyEmail}'),
       ],
     );
   }
