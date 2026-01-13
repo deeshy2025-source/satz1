@@ -1,7 +1,7 @@
 class ConstStrings {
   //tier
   //////////////////////////////////////////////// -------- General --------
-  static const String appName = 'SATZ Tech';
+  static const String appName = 'SATZ-Tech';
 
   static const String logoLight='assets/images/newLogo1.svg';
   static const String servicesAndProducts = "Services & Products";
