@@ -1,9 +1,10 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:web/web.dart' as web;
+import 'package:http/http.dart' as http;
+
 import '../../../../core/constants/const_colors.dart';
 import '../../../../core/constants/const_size.dart';
 import '../../../../core/constants/const_text.dart';
-import '../../../core/constants/const_strings.dart';
 import '../../../core/constants/const_strings_contact_us.dart';
 import 'app_text_field.dart';
 
@@ -15,12 +16,17 @@ class QuickFormCard extends StatefulWidget {
 }
 
 class _QuickFormCardState extends State<QuickFormCard> {
+  static const String _functionUrl =
+      'https://us-central1-staz-v1.cloudfunctions.net/contactSendEmails';
+
   final _formKey = GlobalKey<FormState>();
   final _first = TextEditingController();
   final _last = TextEditingController();
   final _email = TextEditingController();
   final _phone = TextEditingController();
   final _msg = TextEditingController();
+
+  bool _isLoading = false;
 
   @override
   void dispose() {
@@ -32,31 +38,47 @@ class _QuickFormCardState extends State<QuickFormCard> {
     super.dispose();
   }
 
-  void _sendEmail() {
-    // تأكيد إن كل حاجة جاهزة قبل الفتح
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      final subject = Uri.encodeComponent('Quick Contact Request');
-      final name = '${_first.text} ${_last.text}'.trim();
+  Future<void> _submit() async {
+    if (!(_formKey.currentState?.validate() ?? false)) return;
 
-      final body = Uri.encodeComponent('''
-New quick contact message from Satz website:
+    setState(() => _isLoading = true);
 
-👤 Name: $name
-📧 Email: ${_email.text}
-📱 Phone: ${_phone.text}
+    try {
+      final res = await http.post(
+        Uri.parse(_functionUrl),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({
+          'firstName': _first.text.trim(),
+          'lastName': _last.text.trim(),
+          'email': _email.text.trim(),
+          'phone': _phone.text.trim(),
+          'message': _msg.text.trim(),
+        }),
+      );
 
-📝 Message:
-${_msg.text}
+      if (res.statusCode < 200 || res.statusCode >= 300) {
+        throw Exception(res.body);
+      }
 
---------------------
-Sent automatically from Satz contact form
-''');
+      // clear fields
+      _first.clear();
+      _last.clear();
+      _email.clear();
+      _phone.clear();
+      _msg.clear();
 
-      final gmailUrl =
-          'https://mail.google.com/mail/?view=cm&fs=1&to=${ConstStrings.companyEmail}&su=$subject&body=$body';
-
-      web.window.open(gmailUrl, '_blank');
-    });
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Message sent successfully ✅')),
+      );
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to send: $e')),
+      );
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
   }
 
   @override
@@ -81,7 +103,7 @@ Sent automatically from Satz contact form
           key: _formKey,
           child: Column(
             children: [
-              // صف أول: First / Last
+              // First / Last
               Row(
                 children: [
                   Expanded(
@@ -104,7 +126,7 @@ Sent automatically from Satz contact form
 
               const SizedBox(height: ConstSize.formFieldGap),
 
-              // صف تاني: Email / Phone
+              // Email / Phone
               Row(
                 children: [
                   Expanded(
@@ -113,7 +135,7 @@ Sent automatically from Satz contact form
                       hint: ContactUsStrings.formEmail,
                       keyboardType: TextInputType.emailAddress,
                       validator: (v) {
-                        if (v == null || v.isEmpty) return 'Required';
+                        if (v == null || v.trim().isEmpty) return 'Required';
                         final ok =
                         RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(v.trim());
                         return ok ? null : 'Invalid email';
@@ -133,11 +155,13 @@ Sent automatically from Satz contact form
 
               const SizedBox(height: ConstSize.formFieldGap),
 
-              // الرسالة
+              // Message
               AppTextField(
                 controller: _msg,
                 hint: ContactUsStrings.formMessage,
                 maxLines: 6,
+                validator: (v) =>
+                (v == null || v.trim().isEmpty) ? 'Required' : null,
               ),
 
               const SizedBox(height: 16),
@@ -149,17 +173,19 @@ Sent automatically from Satz contact form
                     backgroundColor: ConstColors.mid,
                     foregroundColor: Colors.white,
                   ),
-                  onPressed: () {
-                    if (_formKey.currentState?.validate() ?? false) {
-                      _sendEmail(); // ← هنا الإرسال الفعلي
-                    }
-                  },
-                  child: Text(
+                  onPressed: _isLoading ? null : _submit,
+                  child: _isLoading
+                      ? const SizedBox(
+                    height: 18,
+                    width: 18,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                      : Text(
                     ContactUsStrings.formSubmit,
                     style: ConstText.navButtonText(context),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
